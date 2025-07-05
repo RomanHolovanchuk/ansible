@@ -1,0 +1,20 @@
+[all:children]
+deb-servers
+red-servers
+
+
+[deb-servers]
+srv1	ansible_host=13.61.14.29
+
+[red-servers]
+srv2 ansible_host=1.1.1.1
+
+
+[all:vars]
+ansible_ssh_private_key_file=/etc/ansible/keys/stockholm.pem
+
+[deb-servers:vars]
+ansible_user=ubuntu
+
+[red-servers:vars]
+ansible_user=ec2-user
